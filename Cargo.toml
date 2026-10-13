@@ -1,0 +1,22 @@
+[package]
+name = "gpui-cut"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+cpal = "0.18.2"
+dirs = "7.0.0"
+gpui-kit = "0.7.1"
+image = { version = "0.25", default-features = false, features = ["jpeg"] }
+parking_lot = "0.12.5"
+rtrb = "0.4.0"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+
+[dev-dependencies]
+gpui-kit = { version = "0.7.1", features = ["test-support"] }
+
+[features]
+# Development-only scripted UI driver; see src/automation.rs.
+automation = ["gpui-kit/test-support", "image/png"]
